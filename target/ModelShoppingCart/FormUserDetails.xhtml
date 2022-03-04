@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+<body>
+<div style="width: 100%; font-size: 36px; line-height: 48px; background-color: cadetblue; color: white">Form order with details about user</div>
+<h:panelGrid columns="2" border="1">
+    <f:facet name="header">
+        <h:outputText value="User Details (Order)"></h:outputText>
+    </f:facet>
+    <h:form id="orders">
+        <strong>Orders</strong>
+        <h:panelGrid border="1" columns="3">
+            <strong>Navigation</strong>
+            <h:commandButton value="Previous" actionListener="#{controllerOrders.previousOrder}"></h:commandButton>
+            <h:commandButton value="Next" actionListener="#{controllerOrders.nextOrder}"></h:commandButton>
+        </h:panelGrid>
+        <h:panelGrid border="1" columns="2">
+            <h:outputText value="Id Order"></h:outputText>
+            <h:inputText value="#{controllerOrders.order.id}"></h:inputText>
+            <h:outputText value="Created at "></h:outputText>
+            <h:inputText value="#{controllerOrders.order.createdAt}"><f:convertDateTime pattern="MM/dd/yyyy"
+                                                                                        timeZone="Europe/Bucharest"></f:convertDateTime></h:inputText>
+            <h:outputText value="Delivery"></h:outputText>
+            <h:inputText value="#{controllerOrders.order.delivery}"></h:inputText>
+            <h:outputText value="Payment"></h:outputText>
+            <h:inputText value="#{controllerOrders.order.payment}"></h:inputText>
+        </h:panelGrid>
+        <h:panelGrid border="1" columns="5">
+            <strong>Orders</strong>
+            <h:commandButton value="Add order" actionListener="#{controllerOrders.addOrder}"></h:commandButton>
+            <h:commandButton value="Save order" actionListener="#{controllerOrders.saveOrder}"></h:commandButton>
+            <h:commandButton value="Abandon order" actionListener="#{controllerOrders.abandonOrder}"></h:commandButton>
+            <h:commandButton value="Delete order" actionListener="#{controllerOrders.deleteOrder}"></h:commandButton>
+        </h:panelGrid>
+    </h:form>
+
+    <h:form id="users">
+        <strong>Users</strong>
+        <h:panelGrid border="1" columns="3">
+            <strong>Navigation</strong>
+            <h:commandButton value="Previous" actionListener="#{controllerOrders.previousUser}"></h:commandButton>
+            <h:commandButton value="Next" actionListener="#{controllerOrders.nextUser}"></h:commandButton>
+        </h:panelGrid>
+        <h:panelGrid border="1" columns="2">
+            <h:outputText value="Id user"></h:outputText>
+            <h:inputText value="#{controllerOrders.user.id}"></h:inputText>
+            <h:outputText value="Created at "></h:outputText>
+            <h:inputText value="#{controllerOrders.user.createdAt}"><f:convertDateTime pattern="MM/dd/yyyy"
+                                                                                       timeZone="Europe/Bucharest"></f:convertDateTime></h:inputText>
+            <h:outputText value="First Name User"></h:outputText>
+            <h:inputText value="#{controllerOrders.user.firstName}"></h:inputText>
+            <h:outputText value="Last Name User"></h:outputText>
+            <h:inputText value="#{controllerOrders.user.lastName}"></h:inputText>
+            <h:outputText value="Username"></h:outputText>
+            <h:inputText value="#{controllerOrders.user.username}"></h:inputText>
+            <h:outputText value="Nickname User"></h:outputText>
+            <h:inputText value="#{controllerOrders.user.nickname}"></h:inputText>
+            <h:outputText value="Email User"></h:outputText>
+            <h:inputText value="#{controllerOrders.user.email}"></h:inputText>
+        </h:panelGrid>
+        <h:panelGrid border="1" columns="5">
+            <strong>Users</strong>
+            <h:commandButton value="Add user" actionListener="#{controllerOrders.addUser}"></h:commandButton>
+            <h:commandButton value="Save user" actionListener="#{controllerOrders.saveUser}"></h:commandButton>
+            <h:commandButton value="Abandon user" actionListener="#{controllerOrders.abandonUser}"></h:commandButton>
+            <h:commandButton value="Delete user" actionListener="#{controllerOrders.deleteUser}"></h:commandButton>
+        </h:panelGrid>
+    </h:form>
+
+    <h:form id="addresses">
+        <strong>Addresses</strong>
+        <h:panelGrid border="1" columns="3">
+            <strong>Navigation</strong>
+            <h:commandButton value="Previous" actionListener="#{controllerOrders.previousAddress}"></h:commandButton>
+            <h:commandButton value="Next" actionListener="#{controllerOrders.nextAddress}"></h:commandButton>
+        </h:panelGrid>
+        <h:panelGrid border="1" columns="2">
+            <h:outputText value="Id"></h:outputText>
+            <h:inputText value="#{controllerOrders.address.id}"></h:inputText>
+            <h:outputText value="Created at "></h:outputText>
+            <h:inputText value="#{controllerOrders.address.createdAt}"><f:convertDateTime pattern="MM/dd/yyyy"
+                                                                                          timeZone="Europe/Bucharest"></f:convertDateTime></h:inputText>
+            <h:outputText value="Country"></h:outputText>
+            <h:inputText value="#{controllerOrders.address.country}"></h:inputText>
+            <h:outputText value="County"></h:outputText>
+            <h:inputText value="#{controllerOrders.address.county}"></h:inputText>
+            <h:outputText value="City"></h:outputText>
+            <h:inputText value="#{controllerOrders.address.city}"></h:inputText>
+            <h:outputText value="Number"></h:outputText>
+            <h:inputText value="#{controllerOrders.address.number}"></h:inputText>
+            <h:outputText value="Street"></h:outputText>
+            <h:inputText value="#{controllerOrders.address.street}"></h:inputText>
+        </h:panelGrid>
+        <h:panelGrid border="1" columns="5">
+            <strong>Addresses</strong>
+            <h:commandButton value="Add address" actionListener="#{controllerOrders.addAddress}"></h:commandButton>
+            <h:commandButton value="Save address" actionListener="#{controllerOrders.saveAddress}"></h:commandButton>
+            <h:commandButton value="Abandon address"
+                             actionListener="#{controllerOrders.abandonAddress}"></h:commandButton>
+            <h:commandButton value="Delete address"
+                             actionListener="#{controllerOrders.deleteAddress}"></h:commandButton>
+        </h:panelGrid>
+    </h:form>
+
+    <h:form id="promotions">
+        <strong>Promotions</strong>
+        <h:panelGrid border="1" columns="3">
+            <strong>Navigation</strong>
+            <h:commandButton value="Previous" actionListener="#{controllerOrders.previousPromotion}"></h:commandButton>
+            <h:commandButton value="Next" actionListener="#{controllerOrders.nextPromotion}"></h:commandButton>
+        </h:panelGrid>
+        <h:panelGrid border="1" columns="2">
+            <h:outputText value="Id"></h:outputText>
+            <h:inputText value="#{controllerOrders.promotion.id}"></h:inputText>
+            <h:outputText value="Discount"></h:outputText>
+            <h:inputText value="#{controllerOrders.promotion.discount}"></h:inputText>
+            <h:outputText value="Limit value"></h:outputText>
+            <h:inputText value="#{controllerOrders.promotion.limitValue}"></h:inputText>
+        </h:panelGrid>
+        <h:panelGrid border="1" columns="5">
+            <strong>Promotions</strong>
+            <h:commandButton value="Add promotion" actionListener="#{controllerOrders.addPromotion}"></h:commandButton>
+            <h:commandButton value="Save promotion"
+                             actionListener="#{controllerOrders.savePromotion}"></h:commandButton>
+            <h:commandButton value="Abandon promotion"
+                             actionListener="#{controllerOrders.abandonPromotion}"></h:commandButton>
+            <h:commandButton value="Delete promotion"
+                             actionListener="#{controllerOrders.deletePromotion}"></h:commandButton>
+        </h:panelGrid>
+        <h:commandLink id="Back" action="Main.xhtml" value="Back to Main Page"/>
+    </h:form>
+</h:panelGrid>
+</body>
+</html>

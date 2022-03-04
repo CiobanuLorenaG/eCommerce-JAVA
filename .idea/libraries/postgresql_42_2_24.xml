@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="postgresql-42.2.24">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../Curs/Libraries/apache/lib/jdbc-drivers/postgresql-42.2.24.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../Curs/Libraries/ojdbc8.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../Curs/Libraries/postgresql-42.1.4.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

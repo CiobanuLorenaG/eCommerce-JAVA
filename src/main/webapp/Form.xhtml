@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+<body>
+<div style="width: 100%; font-size: 36px; line-height: 48px; background-color: cadetblue; color: white">Order products</div>
+<h:form id="formOrderProducts">
+    <h:panelGrid border="1" columns="2">
+        <h:outputText value="Navigation"></h:outputText>
+        <h:panelGrid border="1" columns="2">
+            <h:commandButton value="Back" actionListener="#{controller.back}"></h:commandButton>
+            <h:commandButton value="Next" actionListener="#{controller.next}"></h:commandButton>
+        </h:panelGrid>
+        <h:outputText value="Id Order"></h:outputText>
+        <h:inputText value="#{controller.order.id}"></h:inputText>
+        <h:outputText value="Date"></h:outputText>
+        <h:inputText value="#{controller.order.createdAt}">
+            <f:convertDateTime pattern="MM/dd/yyyy" timeZone="Europe/Bucharest"></f:convertDateTime>
+        </h:inputText>
+        <h:outputText value="Delivery"></h:outputText>
+        <h:inputText value="#{controller.order.delivery}"></h:inputText>
+        <h:outputText value="Payment"></h:outputText>
+        <h:inputText value="#{controller.order.payment}"></h:inputText>
+        <h:outputText value="Total Order"></h:outputText>
+        <h:inputText value="#{controller.order.totalOrder}"></h:inputText>
+    </h:panelGrid>
+    <h:panelGrid border="1" columns="4">
+        <h:commandButton value="Add" actionListener="#{controller.addOrder}"></h:commandButton>
+        <h:commandButton value="Save" actionListener="#{controller.saveOrder}"></h:commandButton>
+        <h:commandButton value="Abandon" actionListener="#{controller.abandonOrder}"></h:commandButton>
+        <h:commandButton value="Delete" actionListener="#{controller.deleteOrder}"></h:commandButton>
+    </h:panelGrid>
+
+    <h:dataTable id="tabelCategory" value="#{controller.categoriesDataModel}" var="category" border="1">
+        <h:column id="column1">
+            <f:facet name="header">
+                <h:outputText value="Id"></h:outputText>
+            </f:facet>
+            <h:outputText id="id" value="#{category.id}"></h:outputText>
+        </h:column>
+        <h:column id="column2">
+            <f:facet name="header">
+                <h:outputText value="Product"></h:outputText>
+            </f:facet>
+            <h:selectOneMenu id="cboProducts" value="#controller.idProduct">
+                <f:selectItems value="#{controller.products}" var="item" itemValue="#{item.id}" itemLabel="#{item.name}"></f:selectItems>
+                <f:ajax render="tabelCategory"></f:ajax>
+            </h:selectOneMenu>
+        </h:column>
+        <h:column id="column3">
+            <f:facet name="header">
+                <h:outputText value="Quantity"></h:outputText>
+            </f:facet>
+            <h:inputText value="#{category.product.quantity}"></h:inputText>
+        </h:column>
+        <h:column id="column4">
+            <f:facet name="header">
+                <h:outputText value="Value product"></h:outputText>
+            </f:facet>
+            <h:outputText value="#{category.product.price}"></h:outputText>
+        </h:column>
+        <h:column id="column5">
+            <f:facet name="header">
+                <h:outputText value="Delete"></h:outputText>
+            </f:facet>
+            <h:commandButton value="Delete category" actionListener="#{controller.deleteCategory}"></h:commandButton>
+        </h:column>
+    </h:dataTable>
+    <h:commandButton value="Add category" actionListener="#{controller.addCategory}"></h:commandButton>
+    <h:commandLink id="Back" action="Main.xhtml" value="Back to Main Page"/>
+</h:form>
+</body>
+</html>

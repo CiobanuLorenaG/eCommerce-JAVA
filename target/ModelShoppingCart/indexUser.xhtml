@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+<body>
+
+    <!-- Delete button doesn't work -->
+
+    <div style="width: 100%; font-size: 36px; line-height: 48px; background-color: cadetblue; color: white">Form User</div>
+<h:form id="formUser">
+    <h:panelGrid border="1" columns="2">
+        <f:facet name="header">
+            <h:outputText value="Users"></h:outputText>
+        </f:facet>
+        <h:outputText value="Navigation"></h:outputText>
+        <h:panelGrid border="1" columns="2">
+            <h:commandButton value="Previous" actionListener="#{controllerUsers.previousUser}"></h:commandButton>
+            <h:commandButton value="Next" actionListener="#{controllerUsers.nextUser}"></h:commandButton>
+        </h:panelGrid>
+        <h:outputText value="Id User"></h:outputText>
+        <h:inputText value="#{controllerUsers.user.id}"></h:inputText>
+        <h:outputText value="First Name"></h:outputText>
+        <h:inputText value="#{controllerUsers.user.firstName}"></h:inputText>
+        <h:outputText value="Last Name"></h:outputText>
+        <h:inputText value="#{controllerUsers.user.lastName}"></h:inputText>
+        <h:outputText value="Nickname"></h:outputText>
+        <h:inputText value="#{controllerUsers.user.nickname}"></h:inputText>
+        <h:outputText value="Email"></h:outputText>
+        <h:inputText value="#{controllerUsers.user.email}"></h:inputText>
+    </h:panelGrid>
+    <h:panelGrid border="1" columns="4">
+        <h:commandButton value="Add" actionListener="#{controllerUsers.addUser}"></h:commandButton>
+        <h:commandButton value="Save" actionListener="#{controllerUsers.saveUser}"></h:commandButton>
+        <h:commandButton value="Abandon" actionListener="#{controllerUsers.abandonUser}"></h:commandButton>
+        <h:commandButton value="Delete" actionListener="#{controllerUsers.deleteUser}"></h:commandButton>
+    </h:panelGrid>
+    <h:commandLink id="Back" action="Main.xhtml" value="Back to Main Page"/>
+</h:form>
+</body>
+</html>

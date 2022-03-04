@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+<body>
+<div style="width: 100%; font-size: 36px; line-height: 48px; background-color: cadetblue; color: white">eCcommerce App </div>
+<h:panelGrid columns="2" border="0">
+    <h:form id="mainForm">
+        <h:panelGrid columns="1" border="1">
+            <h:commandLink id="formUserOrder"
+                           action="Form.xhtml" value="Order Products"/>
+            <h:commandLink id="formUser"
+                           action="FormUserDetails.xhtml" value="Form order with details about user"/>
+            <h:commandLink id="formUserComboBox"
+                           action="UserComboBox.xhtml" value="Form user navigation with comboBox"/>
+            <h:commandLink id="formOrder"
+                           action="indexUser.xhtml" value="Form user navigation"/>
+            <h:commandLink id="formProductsCategories"
+                           action="FormProductsCategories.xhtml" value="Products and Categories"/>
+        </h:panelGrid>
+    </h:form>
+    <h:panelGrid columns="1" border="0">
+        SCRUM PROJECT MANAGEMENT
+    </h:panelGrid>
+</h:panelGrid>
+</body>
+</html>

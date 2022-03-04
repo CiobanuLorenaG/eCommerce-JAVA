@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+<body>
+<div style="width: 100%; font-size: 36px; line-height: 48px; background-color: cadetblue; color: white">Form with products and categories</div>
+<h:form id="formCategories">
+    <h:panelGrid columns="4" border="1">
+        <f:facet name="header">
+            <h:outputText value="Categories and Products"></h:outputText>
+        </f:facet>
+        <h:outputText value="Navigation"></h:outputText>
+        <h:panelGrid border="1" columns="2">
+            <h:commandButton value="Previous category"
+                             actionListener="#{controllerProducts.previousCategory}"></h:commandButton>
+            <h:commandButton value="Next category"
+                             actionListener="#{controllerProducts.nextCategory}"></h:commandButton>
+        </h:panelGrid>
+        <h:panelGrid border="1" columns="2">
+            <h:outputText value="Id category"></h:outputText>
+            <h:outputText id="category_id" value="#{controllerProducts.category.id}"></h:outputText>
+            <h:outputText value="Date"></h:outputText>
+            <h:inputText value="#{controllerProducts.product.createdAt}">
+                <f:convertDateTime pattern="MM/dd/yyyy" timeZone="Europe/Bucharest"></f:convertDateTime>
+            </h:inputText>
+            <h:outputText value="Category"></h:outputText>
+            <h:inputText id="category_name" value="#{controllerProducts.category.name}"></h:inputText>
+            <h:outputText value="Description of category"></h:outputText>
+            <h:inputText value="#{controllerProducts.category.description}"></h:inputText>
+        </h:panelGrid>
+        <h:panelGrid border="1" columns="4">
+            <h:commandButton value="Add" actionListener="#{controllerProducts.addCategory}"></h:commandButton>
+            <h:commandButton value="Save" actionListener="#{controllerProducts.saveCategory}"></h:commandButton>
+            <h:commandButton value="Abandon"
+                             actionListener="#{controllerProducts.abandonCategory}"></h:commandButton>
+            <h:commandButton value="Delete" actionListener="#{controllerProducts.deleteCategory}"></h:commandButton>
+        </h:panelGrid>
+    </h:panelGrid>
+</h:form>
+<h:form id="formProducts">
+    <h:panelGrid columns="4" border="1">
+        <h:outputText value="Navigation"></h:outputText>
+        <h:panelGrid border="1" columns="3">
+            <h:commandButton value="Previous product"
+                             actionListener="#{controllerProducts.previousProduct}"></h:commandButton>
+            <h:commandButton value="Next product"
+                             actionListener="#{controllerProducts.nextProduct}"></h:commandButton>
+        </h:panelGrid>
+        <h:panelGrid border="1" columns="2">
+            <h:outputText value="Id product"></h:outputText>
+            <h:inputText value="#{controllerProducts.product.id}"></h:inputText>
+            <h:outputText value="Date"></h:outputText>
+            <h:inputText value="#{controllerProducts.product.createdAt}">
+                <f:convertDateTime pattern="MM/dd/yyyy" timeZone="Europe/Bucharest"></f:convertDateTime>
+            </h:inputText>
+            <h:outputText value="Name product"></h:outputText>
+            <h:inputText value="#{controllerProducts.product.name}"></h:inputText>
+            <h:outputText value="Description of product"></h:outputText>
+            <h:inputText value="#{controllerProducts.product.description}"></h:inputText>
+            <h:outputText value="Price"></h:outputText>
+            <h:inputText value="#{controllerProducts.product.price}"></h:inputText>
+        </h:panelGrid>
+        <h:panelGrid border="1" columns="4">
+            <h:commandButton value="Add" actionListener="#{controllerProducts.addProduct}"></h:commandButton>
+            <h:commandButton value="Save" actionListener="#{controllerProducts.saveProduct}"></h:commandButton>
+            <h:commandButton value="Abandon"
+                             actionListener="#{controllerProducts.abandonProduct}"></h:commandButton>
+            <h:commandButton value="Delete" actionListener="#{controllerProducts.deleteProduct}"></h:commandButton>
+        </h:panelGrid>
+    </h:panelGrid>
+    <h:commandLink id="Back" action="Main.xhtml" value="Back to Main Page"/>
+</h:form>
+</body>
+</html>
